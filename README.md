@@ -87,7 +87,7 @@ Now you can connect to the GraphQL endpoint using `urql`. A custom exchange is n
 import { tauriExchange } from "tauri-plugin-graphql-urql";
 
 const client = createClient({
-  url: "graphql", // this value is important
+  url: "graphql", // this value is important, don't touch
   exchanges: [tauriExchange],
 });
 ```
