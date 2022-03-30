@@ -28,6 +28,11 @@ jobs:
         with:
           version: 6
           run_install: true
+      - name: Install gtk on Ubuntu
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webkit2gtk-4.0
+
       - name: git config
         run: |
           git config --global user.name "${{ github.event.pusher.name }}"
