@@ -4,10 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/format.yml'
+      - 'src/**'
   pull_request:
     branches:
       - main
-      - dev
+    paths:
+      - '.github/workflows/format.yml'
+      - 'src/**'
 
 jobs:
   format:
