@@ -33,7 +33,7 @@
     },
     "javascript": {
       "version": true,
-      "getPublishedVersion": "pnpm view ${ pkgFile.pkg.name } version",
+      "getPublishedVersion": "node ../../.scripts/checkIfPublished.mjs ${ pkgFile.pkg.name } ${ pkg.tag ? pkg.tag : 'latest' }",
       "publish": [
         {
           "command": "echo \"# pnpm Package Publish\"",

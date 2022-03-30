@@ -4,5 +4,10 @@
   "private": true,
   "description": "",
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@effection/fetch": "^2.0.1",
+    "covector": "^0.7.3",
+    "effection": "^2.0.4"
+  }
 }
