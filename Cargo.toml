@@ -1,0 +1,16 @@
+[package]
+name = "tauri-plugin-graphql"
+version = "0.0.0"
+authors = [ "You" ]
+description = ""
+edition = "2021"
+rust-version = "1.57"
+exclude = ["/examples"]
+
+[dependencies]
+juniper = "0.15.9"
+serde_json = "1.0.79"
+tauri = { version = "1.0.0-rc.5" }
+
+[dev-dependencies]
+rand = "0.8.5"
