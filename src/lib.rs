@@ -18,7 +18,7 @@
 //! formal contract between the server and the frontend makes future changes
 //! very difficult.
 //!
-//! We can employ the same tactics used in traditional web development and use
+//! We can employ the same techniques used in traditional web development and use
 //! shared schema that governs which types, methods, etc. are
 //! available. GraphQL is such a schema language.
 //!
