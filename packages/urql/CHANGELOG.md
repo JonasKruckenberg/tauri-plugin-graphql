@@ -1,5 +1,10 @@
 # Changelog
 
+## \[0.1.1]
+
+- Npm publish hotfix
+  - [5ccffc3](https://www.github.com/your-org/tauri-plugin-graphql/commit/5ccffc37efa170db92a260ab6bd89e5fe40b625b) npm publish hotfix on 2022-03-30
+
 ## \[0.1.0]
 
 - Initial release.
