@@ -16,7 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@tauri-apps/api": "1.0.0-rc.3",
