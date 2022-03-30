@@ -1,3 +1,6 @@
 target
 node_modules
 dist
+.npmrc
+.DS_Store
+.Thumbs.db
