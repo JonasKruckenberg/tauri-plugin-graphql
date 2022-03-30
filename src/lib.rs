@@ -24,8 +24,9 @@
 //!
 //! ## Examples
 //!
-//! An example app that implements a very simple read-only todo-app using GraphQL:
-//! 
+//! An example app that implements a very simple read-only todo-app using
+//! GraphQL:
+//!
 //! ```rust
 //! use juniper::{graphql_object, EmptySubscription, EmptyMutation, FieldResult, GraphQLObject, RootNode};
 //! use tauri_plugin_graphql::Context as GraphQLContext;
