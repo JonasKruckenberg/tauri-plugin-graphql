@@ -63,16 +63,14 @@
 //! // Consumers of this schema can only read data, so we must specifcy `EmptyMutation` and `EmptySubscription`
 //! type Schema = RootNode<'static, Query, EmptyMutation<GraphQLContext>, EmptySubscription<GraphQLContext>>;
 //!
-//! fn main() {
-//!     let schema = Schema::new(
-//!         Query,
-//!         EmptyMutation::<GraphQLContext>::new(),
-//!         EmptySubscription::<GraphQLContext>::new(),
-//!     );
+//! let schema = Schema::new(
+//!     Query,
+//!     EmptyMutation::<GraphQLContext>::new(),
+//!     EmptySubscription::<GraphQLContext>::new(),
+//! );
 //!
-//!     tauri::Builder::default()
-//!         .plugin(tauri_plugin_graphql::init(schema));
-//! }
+//! tauri::Builder::default()
+//!     .plugin(tauri_plugin_graphql::init(schema));
 //! ```
 //!
 //! ## Stability
@@ -151,16 +149,14 @@ impl<R: Runtime> juniper::Context for Context<R> {}
 /// type Schema =
 ///     RootNode<'static, Query, EmptyMutation<GraphQLContext>, EmptySubscription<GraphQLContext>>;
 ///
-/// fn main() {
-///     let schema = Schema::new(
-///         Query,
-///         EmptyMutation::<GraphQLContext>::new(),
-///         EmptySubscription::<GraphQLContext>::new(),
-///     );
+/// let schema = Schema::new(
+///     Query,
+///     EmptyMutation::<GraphQLContext>::new(),
+///     EmptySubscription::<GraphQLContext>::new(),
+/// );
 ///
-///     tauri::Builder::default()
-///         .plugin(tauri_plugin_graphql::init(schema));
-///  }
+/// tauri::Builder::default()
+///     .plugin(tauri_plugin_graphql::init(schema));
 /// ```
 pub fn init<R, Query, Mutation, Subscription, S>(
   schema: juniper::RootNode<'static, Query, Mutation, Subscription, S>,
