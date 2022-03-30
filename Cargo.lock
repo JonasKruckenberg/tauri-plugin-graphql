@@ -258,16 +258,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fd16c4719339c4530435d38e511904438d07cce7950afa3718a84ac36c10e89e"
 
 [[package]]
-name = "chrono"
-version = "0.4.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "670ad68c9088c2a963aaa298cb369688cf3f9465ce5e2d4ca10e6e0098a1ce73"
-dependencies = [
- "num-integer",
- "num-traits",
-]
-
-[[package]]
 name = "cocoa"
 version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1368,7 +1358,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "21ac55c9084d08a7e315d78e2b15b7cc220f5eb67413c6ebf6967ee5de3b69fc"
 dependencies = [
  "async-trait",
- "chrono",
  "fnv",
  "futures",
  "futures-enum",
@@ -2678,7 +2667,6 @@ name = "tauri-plugin-graphql"
 version = "0.0.0"
 dependencies = [
  "juniper",
- "rand 0.8.5",
  "serde_json",
  "tauri",
 ]
