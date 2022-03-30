@@ -1,11 +1,15 @@
 [package]
 name = "tauri-plugin-graphql"
 version = "0.0.0"
-authors = [ "You" ]
-description = ""
+authors = [ "Jonas Kruckenberg" ]
+description = "A plugin for Tauri that enables type-safe IPC through GraphQL."
 edition = "2021"
-rust-version = "1.57"
-exclude = ["/examples"]
+rust-version = "1.59"
+exclude = ["/webview-dist", "/webview-src", "node_modules"]
+license = "MIT"
+repository = "https://github.com/JonasKruckenberg/tauri-plugin-graphql"
+categories = [ "gui", "web-programming" ]
+keywords = [ "tauri-plugin", "graphql" ]
 
 [dependencies]
 juniper = { version = "0.15.9", default-features = false }
