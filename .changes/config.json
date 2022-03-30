@@ -30,12 +30,43 @@
           "pipe": true
         }
       ]
+    },
+    "javascript": {
+      "version": true,
+      "getPublishedVersion": "pnpm view ${ pkgFile.pkg.name } version",
+      "publish": [
+        {
+          "command": "echo \"# pnpm Package Publish\"",
+          "dryRunCommand": true,
+          "pipe": true
+        },
+        {
+          "command": "echo '```'",
+          "dryRunCommand": true,
+          "pipe": true
+        },
+        {
+          "command": "pnpm publish --access public --loglevel silly --no-git-checks",
+          "dryRunCommand": "pnpm publish --dry-run --access public",
+          "pipe": true
+        },
+        {
+          "command": "echo '```'",
+          "dryRunCommand": true,
+          "pipe": true
+        }
+      ]
     }
   },
   "packages": {
     "tauri-plugin-graphql": {
       "path": ".",
       "manager": "rust"
+    },
+    "tauri-plugin-graphql-urql": {
+      "path": "packages/urql",
+      "manager": "javascript",
+      "dependencies": ["tauri-plugin-graphql"]
     }
   }
 }
