@@ -1,5 +1,16 @@
 # Tauri Plugin graphql
 
+[![Crates.io][crates-badge]][crates-url]
+[![Documentation][docs-badge]][docs-url]
+[![MIT licensed][mit-badge]][mit-url]
+
+[crates-badge]: https://img.shields.io/crates/v/tauri-plugin-graphql.svg
+[crates-url]: https://crates.io/crates/tauri-plugin-graphql
+[docs-badge]: https://img.shields.io/docsrs/tauri-plugin-graphql.svg
+[docs-url]: https://docs.rs/tauri-plugin-graphql
+[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-url]: LICENSE
+
 A plugin for Tauri that enables type-safe IPC through GraphQL.
 
 ## Install
@@ -19,12 +30,17 @@ The only client-side adapter currently is `tauri-plugin-graphql-urql`, a custom 
 
 #### Urql
 
+[![Npm][npm-badge]][npm-url]
+
+[npm-url]: https://www.npmjs.com/package/tauri-plugin-graphql-urql
+[npm-badge]: https://img.shields.io/npm/v/tauri-plugin-graphql-urql
+
 ```console
-$ pnpm add tauri-plugin-positioner
+$ pnpm add tauri-plugin-graphql-urql
 # or
-$ npm install tauri-plugin-positioner
+$ npm install tauri-plugin-graphql-urql
 # or
-$ yarn add tauri-plugin-positioner
+$ yarn add tauri-plugin-graphql-urql
 ```
 
 ## Usage
