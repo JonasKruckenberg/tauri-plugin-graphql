@@ -99,7 +99,7 @@ PRs are welcome!
 [MIT © Jonas Kruckenberg](./LICENSE)
 
 [`tauri-plugin-graphql-urql`]: packages/urql
-[urql-adapter-version-badge]: https://img.shields.io/npm/v/itauri-plugin-graphql-urql?label=%20
+[urql-adapter-version-badge]: https://img.shields.io/npm/v/tauri-plugin-graphql-urql?label=%20
 [urql-adapter-changelog]: packages/urql/CHANGELOG.md
 [`urql`]: https://formidable.com/open-source/urql/
 [`juniper::rootnode`]: https://docs.rs/juniper/latest/juniper/struct.RootNode.html
