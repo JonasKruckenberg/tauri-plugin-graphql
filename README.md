@@ -26,22 +26,12 @@ tauri-plugin-positioner = { git = "https://github.com/JonasKruckenberg/tauri-plu
 
 ### JavaScript
 
-The only client-side adapter currently is `tauri-plugin-graphql-urql`, a custom exchange for [`urql`]. If you need adapters for other GraphQL clients, open a PR!
+The only client-side adapter currently is `tauri-plugin-graphql-urql`, a custom exchange for [`urql`]. 
+If you need adapters for other GraphQL clients, open a PR!
 
-#### Urql
-
-[![Npm][npm-badge]][npm-url]
-
-[npm-url]: https://www.npmjs.com/package/tauri-plugin-graphql-urql
-[npm-badge]: https://img.shields.io/npm/v/tauri-plugin-graphql-urql
-
-```console
-$ pnpm add tauri-plugin-graphql-urql
-# or
-$ npm install tauri-plugin-graphql-urql
-# or
-$ yarn add tauri-plugin-graphql-urql
-```
+| Package                       | Version (click for changelogs) |
+|-------------------------------|--------------------------------|
+| [`tauri-plugin-graphql-urql`] | [![urql adapter version][urql-adapter-version-badge]][urql-adapter-changelog]
 
 ## Usage
 
@@ -97,17 +87,6 @@ fn main() {
 }
 ```
 
-Now you can connect to the GraphQL endpoint using `urql`. A custom exchange is needed because this plugin transports all messages through Tauri's IPC system, not via an external HTTP server.
-
-```javascript
-import { tauriExchange } from "tauri-plugin-graphql-urql";
-
-const client = createClient({
-  url: "graphql", // this value is important, don't touch
-  exchanges: [tauriExchange],
-});
-```
-
 ## Contributing
 
 If you want to help out, there are a few areas that need improvement:
@@ -121,5 +100,8 @@ PRs are welcome!
 
 [MIT © Jonas Kruckenberg](./LICENSE)
 
+[`tauri-plugin-graphql-urql`]: packages/urql
+[urql-adapter-version-badge]: https://img.shields.io/npm/v/itauri-plugin-graphql-urql?label=%20
+[urql-adapter-changelog]: packages/urql/CHANGELOG.md
 [`urql`]: https://formidable.com/open-source/urql/
 [`juniper::rootnode`]: https://docs.rs/juniper/latest/juniper/struct.RootNode.html
