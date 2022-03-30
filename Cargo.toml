@@ -1,11 +1,11 @@
 [package]
 name = "tauri-plugin-graphql"
-version = "0.0.0"
+version = "0.1.0"
 authors = [ "Jonas Kruckenberg" ]
 description = "A plugin for Tauri that enables type-safe IPC through GraphQL."
 edition = "2021"
 rust-version = "1.59"
-exclude = ["/webview-dist", "/webview-src", "node_modules"]
+exclude = [ "/webview-dist", "/webview-src", "node_modules" ]
 license = "MIT"
 repository = "https://github.com/JonasKruckenberg/tauri-plugin-graphql"
 categories = [ "gui", "web-programming" ]
@@ -17,5 +17,5 @@ serde_json = "1.0.79"
 tauri = { version = "1.0.0-rc.6" }
 
 [features]
-url = ["juniper/url"]
-uuid = ["juniper/uuid"]
+url = [ "juniper/url" ]
+uuid = [ "juniper/uuid" ]

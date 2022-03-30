@@ -1,15 +1,20 @@
 {
   "name": "tauri-plugin-graphql-urql",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A plugin for Tauri that enables type-safe IPC through GraphQL.",
   "author": "Jonas Kruckenberg",
   "license": "MIT",
   "repository": "https://github.com/JonasKruckenberg/tauri-plugin-graphql",
-  "keywords": ["tauri-plugin", "graphql"],
+  "keywords": [
+    "tauri-plugin",
+    "graphql"
+  ],
   "browser": "dist/index.mjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup"
   },
