@@ -44,7 +44,7 @@ jobs:
       run: echo "CURRENT_DATE=$(Get-Date -Format "yyyy-MM-dd")" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
     - name: Cache cargo state
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       env:
         cache-name: cargo-state
       with:
@@ -60,7 +60,7 @@ jobs:
           ${{ matrix.os }}-
 
     - name: Cache cargo target
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       env:
           cache-name: cargo-build
       with:
