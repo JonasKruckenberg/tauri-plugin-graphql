@@ -17,11 +17,9 @@ A plugin for Tauri that enables type-safe IPC through GraphQL.
 
 ### Rust
 
-This plugin is not yet published on crates.io, so for the time being you can install it from GitHub:
-
 ```toml
 [dependencies]
-tauri-plugin-positioner = { git = "https://github.com/JonasKruckenberg/tauri-plugin-graphql" }
+tauri-plugin-graphql = "0.1"
 ```
 
 ### JavaScript
