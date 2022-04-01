@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@effection/fetch": "^2.0.1",
+    "@effection/fetch": "^2.0.4",
     "covector": "^0.7.3",
     "effection": "^2.0.4"
   }
