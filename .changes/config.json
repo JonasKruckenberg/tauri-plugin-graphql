@@ -6,10 +6,6 @@
       "getPublishedVersion": "cargo search ${ pkg.pkg } --limit 1 | sed -nE 's/^[^\"]*\"//; s/\".*//1p' -",
       "publish": [
         {
-          "command": "cargo package --allow-dirty",
-          "dryRunCommand": true
-        },
-        {
           "command": "echo \"# Cargo Publish\"",
           "dryRunCommand": true,
           "pipe": true
