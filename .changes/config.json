@@ -15,7 +15,7 @@
           "pipe": true
         },
         {
-          "command": "echo \"\\`\\`\\`\"",
+          "command": "echo '```'",
           "dryRunCommand": true,
           "pipe": true
         },
@@ -25,7 +25,7 @@
           "pipe": true
         },
         {
-          "command": "echo \"\\`\\`\\`\"",
+          "command": "echo '```'",
           "dryRunCommand": true,
           "pipe": true
         }
