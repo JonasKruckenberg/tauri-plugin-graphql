@@ -89,7 +89,6 @@ fn main() {
 
 If you want to help out, there are a few areas that need improvement:
 
-- **Subscriptions** - Currently, subscriptions are not supported, as the one-off nature of commands makes this difficult, but subscriptions can be implemented using events.
 - **Client Adapters** - Currently, only a urql adapter exists; having adapters for more client libraries would be very nice.
 
 PRs are welcome!
