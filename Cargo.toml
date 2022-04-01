@@ -22,3 +22,6 @@ tauri = { version = "1.0.0-rc.6" }
 url = [ "juniper/url" ]
 uuid = [ "juniper/uuid" ]
 subscriptions = ["juniper_subscriptions", "serde"]
+
+[dev-dependencies]
+rand = "0.8.5"
