@@ -26,7 +26,7 @@
     "wonka": "4.0.15"
   },
   "devDependencies": {
-    "tsup": "5.12.1",
+    "tsup": "5.12.2",
     "typescript": "4.6.3"
   }
 }
