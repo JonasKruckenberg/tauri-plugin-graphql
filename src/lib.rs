@@ -99,7 +99,7 @@ use serde::Deserialize;
 use std::sync::Arc;
 use tauri::{
   plugin::{self, TauriPlugin},
-  AppHandle, Manager, Runtime, Window,
+  AppHandle, InvokeError, Manager, Runtime, Window,
 };
 
 pub use juniper;
@@ -176,8 +176,7 @@ where
   Query::TypeInfo: Send + Sync,
   Mutation: juniper::GraphQLTypeAsync<S, Context = Context<R>> + Send + 'static,
   Mutation::TypeInfo: Send + Sync,
-  Subscription:
-    juniper::GraphQLSubscriptionType<S, Context = Context<R>> + Send + 'static,
+  Subscription: juniper::GraphQLSubscriptionType<S, Context = Context<R>> + Send + 'static,
   Subscription::TypeInfo: Send + Sync,
   S: juniper::ScalarValue + Send + Sync + 'static,
 {
@@ -197,39 +196,44 @@ where
       let schema = schema.clone();
 
       match invoke.message.command() {
-          "graphql" => invoke.resolver.respond_async(async move {
-              let req: GraphQLBatchRequest<S> =
-                serde_json::from_value(invoke.message.payload().clone()).unwrap();
+        "graphql" => invoke.resolver.respond_async(async move {
+          let req: GraphQLBatchRequest<S> =
+            serde_json::from_value(invoke.message.payload().clone())
+              .map_err(InvokeError::from_serde_json)?;
 
-              let ret = req
-                .execute::<Query, Mutation, Subscription>(&schema, &ctx)
-                .await;
+          let ret = req
+            .execute::<Query, Mutation, Subscription>(&schema, &ctx)
+            .await;
 
-              let str = serde_json::to_string(&ret).unwrap();
+          let str = serde_json::to_string(&ret).map_err(InvokeError::from_serde_json)?;
 
-              Ok((str, ret.is_ok()))
-            }),
-          #[cfg(feature = "subscriptions")]
-          "subscriptions" => invoke.resolver.respond_async(async move{
-            let req: GraphQLSubscriptionRequest<S> = serde_json::from_value(invoke.message.payload().clone()).unwrap();
+          Ok((str, ret.is_ok()))
+        }),
+        #[cfg(feature = "subscriptions")]
+        "subscriptions" => invoke.resolver.respond_async(async move {
+          let req: GraphQLSubscriptionRequest<S> =
+            serde_json::from_value(invoke.message.payload().clone())
+              .map_err(InvokeError::from_serde_json)?;
 
-            let mut conn = juniper::http::resolve_into_stream(&req.inner, &schema, &ctx)
-                .map_ok(|(stream, errors)| Connection::from_stream(stream, errors))
-                .boxed()
-                .await
-                .unwrap();
+          let mut conn = juniper::http::resolve_into_stream(&req.inner, &schema, &ctx)
+            .map_ok(|(stream, errors)| Connection::from_stream(stream, errors))
+            .boxed()
+            .await?;
 
-            let event_id = &format!("graphql://{}", req.id);
+          let event_id = &format!("graphql://{}", req.id);
 
-              while let Some(result) = conn.next().await {
-                let str = serde_json::to_string(&result).unwrap();
-                subscription_window.emit(event_id, str).unwrap();
-              }
-              subscription_window.emit(event_id, Option::<()>::None).unwrap();
+          while let Some(result) = conn.next().await {
+            let str = serde_json::to_string(&result).map_err(InvokeError::from_serde_json)?;
 
-            Ok(())
-          }),
-          _ => invoke.resolver.reject("Invalid endpoint. Valid endpoints are: \"graphql\", \"subscriptions\".",)
+            subscription_window.emit(event_id, str)?;
+          }
+          subscription_window.emit(event_id, Option::<()>::None)?;
+
+          Ok(())
+        }),
+        _ => invoke
+          .resolver
+          .reject("Invalid endpoint. Valid endpoints are: \"graphql\", \"subscriptions\"."),
       };
     })
     .build()
