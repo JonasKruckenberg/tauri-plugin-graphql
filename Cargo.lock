@@ -1383,6 +1383,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "juniper_subscriptions"
+version = "0.16.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2983b26a1e12b691c17432aee3881d8bec4a94d6c64bc933c0eaf6d9e3429f13"
+dependencies = [
+ "futures",
+ "juniper",
+]
+
+[[package]]
 name = "kuchiki"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2667,6 +2677,8 @@ name = "tauri-plugin-graphql"
 version = "0.1.0"
 dependencies = [
  "juniper",
+ "juniper_subscriptions",
+ "serde",
  "serde_json",
  "tauri",
 ]

@@ -87,6 +87,15 @@
 //! Subscriptions are currently not supported.
 
 use juniper::http::GraphQLBatchRequest;
+#[cfg(feature = "subscriptions")]
+use juniper::{
+  futures::{FutureExt, StreamExt, TryFutureExt},
+  http::GraphQLRequest,
+};
+#[cfg(feature = "subscriptions")]
+use juniper_subscriptions::Connection;
+#[cfg(feature = "subscriptions")]
+use serde::Deserialize;
 use std::sync::Arc;
 use tauri::{
   plugin::{self, TauriPlugin},
@@ -176,13 +185,10 @@ where
 
   plugin::Builder::new("graphql")
     .invoke_handler(move |invoke| {
-      if invoke.message.command() != "graphql" {
-        return invoke.resolver.reject(
-          "Invalid graphql endpoint. Valid endpoints are: \"graphql\".",
-        );
-      }
-
       let window = invoke.message.window();
+      #[cfg(feature = "subscriptions")]
+      let subscription_window = window.clone();
+
       let ctx = Context {
         app: window.app_handle(),
         window,
@@ -190,18 +196,52 @@ where
 
       let schema = schema.clone();
 
-      invoke.resolver.respond_async(async move {
-        let req: GraphQLBatchRequest<S> =
-          serde_json::from_value(invoke.message.payload().clone()).unwrap();
+      match invoke.message.command() {
+          "graphql" => invoke.resolver.respond_async(async move {
+              let req: GraphQLBatchRequest<S> =
+                serde_json::from_value(invoke.message.payload().clone()).unwrap();
 
-        let ret = req
-          .execute::<Query, Mutation, Subscription>(&schema, &ctx)
-          .await;
+              let ret = req
+                .execute::<Query, Mutation, Subscription>(&schema, &ctx)
+                .await;
 
-        let str = serde_json::to_string(&ret).unwrap();
+              let str = serde_json::to_string(&ret).unwrap();
 
-        Ok((str, ret.is_ok()))
-      });
+              Ok((str, ret.is_ok()))
+            }),
+          #[cfg(feature = "subscriptions")]
+          "subscriptions" => invoke.resolver.respond_async(async move{
+            let req: GraphQLSubscriptionRequest<S> = serde_json::from_value(invoke.message.payload().clone()).unwrap();
+
+            let mut conn = juniper::http::resolve_into_stream(&req.inner, &schema, &ctx)
+                .map_ok(|(stream, errors)| Connection::from_stream(stream, errors))
+                .boxed()
+                .await
+                .unwrap();
+
+            let event_id = &format!("graphql://{}", req.id);
+
+              while let Some(result) = conn.next().await {
+                let str = serde_json::to_string(&result).unwrap();
+                subscription_window.emit(event_id, str).unwrap();
+              }
+              subscription_window.emit(event_id, Option::<()>::None).unwrap();
+
+            Ok(())
+          }),
+          _ => invoke.resolver.reject("Invalid endpoint. Valid endpoints are: \"graphql\", \"subscriptions\".",)
+      };
     })
     .build()
+}
+
+#[cfg(feature = "subscriptions")]
+#[derive(Debug, Deserialize)]
+pub struct GraphQLSubscriptionRequest<S: juniper::ScalarValue> {
+  #[serde(
+    flatten,
+    bound(deserialize = "juniper::InputValue<S>: serde::Deserialize<'de>")
+  )]
+  inner: GraphQLRequest<S>,
+  id: u32,
 }
