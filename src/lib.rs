@@ -24,8 +24,9 @@
 //!
 //! ## Examples
 //!
-//! For the following examples, it is assumed you are familiar with [`Tauri Commands`][`Commands`], [`Events`] and [`GraphQL`].
-//! 
+//! For the following examples, it is assumed you are familiar with [`Tauri
+//! Commands`][`Commands`], [`Events`] and [`GraphQL`].
+//!
 //! ### Queries
 //!
 //! An example app that implements a very simple read-only todo-app using
@@ -169,6 +170,9 @@
 //! ```
 //!
 //! ### Subscriptions
+//!
+//! > **Support for GraphQL Subscriptions requires the `subscriptions` feature
+//! flag**
 //!
 //! GraphQL subscriptions are a way to push real-time data to the Frontend.
 //! Similarly to queries, a client can request a set of fields, but instead of
