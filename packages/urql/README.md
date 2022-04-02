@@ -7,11 +7,11 @@ Custom `urql` exchange that uses Tauri's IPC system to resolve queries against a
 ## Install
 
 ```console
-$ pnpm add tauri-plugin-positioner
+$ pnpm add tauri-plugin-graphql-urql
 # or
-$ npm install tauri-plugin-positioner
+$ npm install tauri-plugin-graphql-urql
 # or
-$ yarn add tauri-plugin-positioner
+$ yarn add tauri-plugin-graphql-urql
 ```
 
 ## Usage
