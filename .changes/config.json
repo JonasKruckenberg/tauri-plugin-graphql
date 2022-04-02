@@ -6,6 +6,16 @@
       "getPublishedVersion": "cargo search ${ pkg.pkg } --limit 1 | sed -nE 's/^[^\"]*\"//; s/\".*//1p' -",
       "publish": [
         {
+          "command": "sudo apt-get update",
+          "dryRunCommand": true,
+          "pipe": true
+        },
+        {
+          "command": "sudo apt-get install -y webkit2gtk-4.0",
+          "dryRunCommand": true,
+          "pipe": true
+        },
+        {
           "command": "echo \"# Cargo Publish\"",
           "dryRunCommand": true,
           "pipe": true
