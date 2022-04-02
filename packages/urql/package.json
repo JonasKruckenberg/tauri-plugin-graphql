@@ -5,6 +5,8 @@
   "author": "Jonas Kruckenberg",
   "license": "MIT",
   "repository": "https://github.com/JonasKruckenberg/tauri-plugin-graphql",
+  "homepage": "https://github.com/JonasKruckenberg/tauri-plugin-graphql/tree/main/packages/urql",
+  "bugs": "https://github.com/JonasKruckenberg/tauri-plugin-graphql/issues",
   "keywords": [
     "tauri-plugin",
     "graphql"
