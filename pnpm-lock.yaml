@@ -36,14 +36,14 @@ importers:
   packages/urql:
     specifiers:
       '@tauri-apps/api': 1.0.0-rc.3
-      '@urql/core': 2.4.3
+      '@urql/core': 2.4.4
       graphql: 16.3.0
       tsup: 5.12.4
       typescript: 4.6.3
       wonka: 4.0.15
     dependencies:
       '@tauri-apps/api': 1.0.0-rc.3
-      '@urql/core': 2.4.3_graphql@16.3.0
+      '@urql/core': 2.4.4_graphql@16.3.0
       graphql: 16.3.0
       wonka: 4.0.15
     devDependencies:
@@ -705,8 +705,8 @@ packages:
       wonka: 4.0.15
     dev: false
 
-  /@urql/core/2.4.3_graphql@16.3.0:
-    resolution: {integrity: sha512-FpapxUKF0nLdzRLoB1QsudDjeLXJhBwzkzl8bSOJ6Cnj7LRRKJ+dYdqHfqGykswB/ILrkZks2Isp4a4BhqyUow==}
+  /@urql/core/2.4.4_graphql@16.3.0:
+    resolution: {integrity: sha512-TD+OS7jG1Ts6QkpU0TZ85i/vu40r71GF0QQFDhnWFtgkHcNwnpkIwWBMa72AR3j2imBTPpk61e/xb39uM/t37A==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
