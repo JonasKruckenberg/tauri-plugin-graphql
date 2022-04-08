@@ -400,9 +400,9 @@ where
 
           Ok(())
         }),
-        _ => invoke
+        endpoint => invoke
           .resolver
-          .reject("Invalid endpoint. Valid endpoints are: \"graphql\", \"subscriptions\"."),
+          .reject(format!("Invalid endpoint \"{}\". Valid endpoints are: \"graphql\", \"subscriptions\".", endpoint)),
       };
     })
     .build()
