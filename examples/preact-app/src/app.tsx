@@ -19,7 +19,7 @@ function TestQuery() {
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
-    <pre>{JSON.stringify(data, null, 2)}</pre>
+    <p>The hero is {data.hero.name}</p>
   );
 }
 

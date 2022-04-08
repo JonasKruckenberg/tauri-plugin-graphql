@@ -11,7 +11,7 @@
   "dependencies": {
     "@tauri-apps/api": "^1.0.0-rc.3",
     "@urql/preact": "^2.0.3",
-    "preact": "^10.7.0",
+    "preact": "^10.7.1",
     "tauri-plugin-graphql-urql": "link:../../packages/urql"
   },
   "devDependencies": {
