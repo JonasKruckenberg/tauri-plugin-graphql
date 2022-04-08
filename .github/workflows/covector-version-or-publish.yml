@@ -24,9 +24,12 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
       - uses: pnpm/action-setup@v2.2.1
         with:
-          version: 6
+          version: next-7
           run_install: true
       - name: git config
         run: |
