@@ -1,5 +1,10 @@
 # Changelog
 
+## \[0.2.2]
+
+- Update dependency `@tauri-apps/api` to `1.0.0-rc.4`
+  - [5e68e7b](https://www.github.com/your-org/tauri-plugin-graphql/commit/5e68e7b7676f51bea1212a62f824708297e2df57) Create update-tauri-api.md on 2022-04-27
+
 ## \[0.2.1]
 
 - Fix readme copy\&paste issue
