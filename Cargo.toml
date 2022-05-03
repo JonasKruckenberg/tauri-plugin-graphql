@@ -25,3 +25,6 @@ subscriptions = [ "juniper_subscriptions", "serde" ]
 
 [dev-dependencies]
 rand = "0.8.5"
+
+[package.metadata.docs.rs]
+features = ["subscriptions"]
