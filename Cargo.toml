@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-graphql"
-version = "0.2.1"
+version = "0.2.2"
 authors = [ "Jonas Kruckenberg" ]
 description = "A plugin for Tauri that enables type-safe IPC through GraphQL."
 edition = "2021"
@@ -10,6 +10,9 @@ license = "MIT"
 repository = "https://github.com/JonasKruckenberg/tauri-plugin-graphql"
 categories = [ "gui", "web-programming" ]
 keywords = [ "tauri-plugin", "graphql" ]
+
+[package.metadata.docs.rs]
+features = [ "subscriptions" ]
 
 [dependencies]
 juniper = { version = "0.15.9", default-features = false }
@@ -25,6 +28,3 @@ subscriptions = [ "juniper_subscriptions", "serde" ]
 
 [dev-dependencies]
 rand = "0.8.5"
-
-[package.metadata.docs.rs]
-features = ["subscriptions"]

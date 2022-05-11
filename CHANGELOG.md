@@ -1,5 +1,12 @@
 # Changelog
 
+## \[0.2.2]
+
+- Update dependencies
+  - [7c8a65d](https://www.github.com/your-org/tauri-plugin-graphql/commit/7c8a65d2ccdf9ea8f0cced2fc8734ba9aec9d1c0) Create update-deps.md on 2022-05-11
+- Update documentation
+  - [de4c1fa](https://www.github.com/your-org/tauri-plugin-graphql/commit/de4c1fa22fbaaa84f786f92568bc4a52201a3a2d) Create update-docs.md on 2022-05-03
+
 ## \[0.2.1]
 
 - Update dependency `tauri` to `1.0.0-rc.8`
