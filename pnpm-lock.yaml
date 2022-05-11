@@ -38,7 +38,7 @@ importers:
       '@tauri-apps/api': 1.0.0-rc.5
       '@urql/core': 2.4.4
       graphql: 16.5.0
-      tsup: 5.12.6
+      tsup: 5.12.7
       typescript: 4.6.4
       wonka: 4.0.15
     dependencies:
@@ -47,7 +47,7 @@ importers:
       graphql: 16.5.0
       wonka: 4.0.15
     devDependencies:
-      tsup: 5.12.6_typescript@4.6.4
+      tsup: 5.12.7_typescript@4.6.4
       typescript: 4.6.4
 
 packages:
@@ -2504,8 +2504,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/5.12.6_typescript@4.6.4:
-    resolution: {integrity: sha512-tpePOgdMRKRgazF+ujq9k1Fo44PUFUJJjRLtxq87pQrYW/Ub/fu1GpFGLzdUF9qjJ4FX1ykhf2d9mWCNy+jAtg==}
+  /tsup/5.12.7_typescript@4.6.4:
+    resolution: {integrity: sha512-+OxYroGLByY0Fm8DLZaB4nVMlD59VsQoNXdhnO9wOG+cOsKXUwN3ER9gaKOjZJG26eKUXebmDme0Cy3emfRvOQ==}
     hasBin: true
     peerDependencies:
       typescript: ^4.1.0
