@@ -1,5 +1,12 @@
 # Changelog
 
+## \[0.2.4]
+
+- Update dependencies.
+  - Bumped due to a bump in tauri-plugin-graphql.
+  - [f15f662](https://www.github.com/your-org/tauri-plugin-graphql/commit/f15f6628a4aee793691b13a9b41c7884abd9c5d0) Create chore-update-deps.md on 2022-05-18
+  - [4f73836](https://www.github.com/your-org/tauri-plugin-graphql/commit/4f73836c1843b31009289c47d1951e11a1980a49) Update chore-update-deps.md on 2022-05-19
+
 ## \[0.2.3]
 
 - Update dependencies
