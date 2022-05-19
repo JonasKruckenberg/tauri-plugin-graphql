@@ -1,5 +1,5 @@
 ---
-"tauri-build": patch
+"tauri-plugin-graphql": patch
 ---
 
 Update dependencies.
