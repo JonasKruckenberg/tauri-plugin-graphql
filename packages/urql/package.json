@@ -22,7 +22,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@tauri-apps/api": "1.0.0-rc.5",
+    "@tauri-apps/api": "1.0.0-rc.6",
     "@urql/core": "2.4.4",
     "graphql": "16.5.0",
     "wonka": "4.0.15"
