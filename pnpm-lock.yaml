@@ -38,7 +38,7 @@ importers:
       '@tauri-apps/api': 1.0.0-rc.6
       '@urql/core': 2.5.0
       graphql: 16.5.0
-      tsup: 5.12.8
+      tsup: 5.12.9
       typescript: 4.7.2
       wonka: 4.0.15
     dependencies:
@@ -47,7 +47,7 @@ importers:
       graphql: 16.5.0
       wonka: 4.0.15
     devDependencies:
-      tsup: 5.12.8_typescript@4.7.2
+      tsup: 5.12.9_typescript@4.7.2
       typescript: 4.7.2
 
 packages:
@@ -2238,6 +2238,14 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /rollup/2.74.1:
+    resolution: {integrity: sha512-K2zW7kV8Voua5eGkbnBtWYfMIhYhT9Pel2uhBk2WO5eMee161nPze/XRfvEQPFYz7KgrCCnmh2Wy0AMFLGGmMA==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /run-async/2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}
     engines: {node: '>=0.12.0'}
@@ -2520,12 +2528,18 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/5.12.8_typescript@4.7.2:
-    resolution: {integrity: sha512-fSBzUBtrnAQ+XKPfj1KcZ2Pl0EUlKBqpbTmRAs+2mL34fQlowrm6ccQgOYyMe9MMAcejMP6/7Rw3qKjx1lreZA==}
+  /tsup/5.12.9_typescript@4.7.2:
+    resolution: {integrity: sha512-dUpuouWZYe40lLufo64qEhDpIDsWhRbr2expv5dHEMjwqeKJS2aXA/FPqs1dxO4T6mBojo7rvo3jP9NNzaKyDg==}
     hasBin: true
     peerDependencies:
+      '@swc/core': ^1
+      postcss: ^8.4.12
       typescript: ^4.1.0
     peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      postcss:
+        optional: true
       typescript:
         optional: true
     dependencies:
@@ -2539,13 +2553,12 @@ packages:
       joycon: 3.1.1
       postcss-load-config: 3.1.4
       resolve-from: 5.0.0
-      rollup: 2.70.1
+      rollup: 2.74.1
       source-map: 0.8.0-beta.0
       sucrase: 3.20.3
       tree-kill: 1.2.2
       typescript: 4.7.2
     transitivePeerDependencies:
-      - postcss
       - supports-color
       - ts-node
     dev: true
