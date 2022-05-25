@@ -35,14 +35,14 @@ importers:
 
   packages/urql:
     specifiers:
-      '@tauri-apps/api': 1.0.0-rc.5
+      '@tauri-apps/api': 1.0.0-rc.6
       '@urql/core': 2.4.4
       graphql: 16.5.0
       tsup: 5.12.8
       typescript: 4.6.4
       wonka: 4.0.15
     dependencies:
-      '@tauri-apps/api': 1.0.0-rc.5
+      '@tauri-apps/api': 1.0.0-rc.6
       '@urql/core': 2.4.4_graphql@16.5.0
       graphql: 16.5.0
       wonka: 4.0.15
@@ -579,8 +579,8 @@ packages:
       type-fest: 2.12.1
     dev: false
 
-  /@tauri-apps/api/1.0.0-rc.5:
-    resolution: {integrity: sha512-IiQg7pLByl/W3KRx9Whn1EWh9ZrBojkl9FAgCRJ4//e58var1WmNPHA92YC0i0DLSIF0JLLp0EQKRHJa+aaqlQ==}
+  /@tauri-apps/api/1.0.0-rc.6:
+    resolution: {integrity: sha512-/PbVs3/dUzid0/1XbML8tAkRSOmp+6Gv9ql02HGt3aIjNTvaL2902qEbiTX6xK++3oUoKJJ88t+V6IiNd1JUkw==}
     engines: {node: '>= 12.13.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dependencies:
       type-fest: 2.12.2
@@ -2130,7 +2130,6 @@ packages:
 
   /preact/10.7.1:
     resolution: {integrity: sha512-MufnRFz39aIhs9AMFisonjzTud1PK1bY+jcJLo6m2T9Uh8AqjD77w11eAAawmjUogoGOnipECq7e/1RClIKsxg==}
-    dev: false
 
   /punycode/2.1.1:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
