@@ -39,7 +39,7 @@ importers:
       '@urql/core': 2.4.4
       graphql: 16.5.0
       tsup: 5.12.8
-      typescript: 4.6.4
+      typescript: 4.7.2
       wonka: 4.0.15
     dependencies:
       '@tauri-apps/api': 1.0.0-rc.6
@@ -47,8 +47,8 @@ importers:
       graphql: 16.5.0
       wonka: 4.0.15
     devDependencies:
-      tsup: 5.12.8_typescript@4.6.4
-      typescript: 4.6.4
+      tsup: 5.12.8_typescript@4.7.2
+      typescript: 4.7.2
 
 packages:
 
@@ -2520,7 +2520,7 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/5.12.8_typescript@4.6.4:
+  /tsup/5.12.8_typescript@4.7.2:
     resolution: {integrity: sha512-fSBzUBtrnAQ+XKPfj1KcZ2Pl0EUlKBqpbTmRAs+2mL34fQlowrm6ccQgOYyMe9MMAcejMP6/7Rw3qKjx1lreZA==}
     hasBin: true
     peerDependencies:
@@ -2543,7 +2543,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.20.3
       tree-kill: 1.2.2
-      typescript: 4.6.4
+      typescript: 4.7.2
     transitivePeerDependencies:
       - postcss
       - supports-color
@@ -2576,8 +2576,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/4.6.4:
-    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
+  /typescript/4.7.2:
+    resolution: {integrity: sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
