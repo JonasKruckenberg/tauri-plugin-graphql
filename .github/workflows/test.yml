@@ -13,6 +13,11 @@ on:
     paths:
       - '.github/workflows/test.yml'
       - 'src/**'
+  
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-test:
