@@ -2542,7 +2542,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-graphql"
-version = "0.2.3"
+version = "0.2.4"
 dependencies = [
  "juniper",
  "juniper_subscriptions",
