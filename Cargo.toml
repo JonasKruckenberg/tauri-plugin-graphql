@@ -19,7 +19,7 @@ juniper = { version = "0.15.9", default-features = false }
 juniper_subscriptions = { version = "0.16.0", optional = true }
 serde = { version = "1.0.137", features = [ "derive" ], optional = true }
 serde_json = "1.0.81"
-tauri = { version = "1.0.0-rc.12" }
+tauri = "^1.0.0-rc.3"
 
 [features]
 url = [ "juniper/url" ]
