@@ -1,5 +1,16 @@
 # Changelog
 
+## \[1.0.0]
+
+- Mark as `stable`
+  - [d6ba689](https://www.github.com/your-org/tauri-plugin-graphql/commit/d6ba6891a0132ea67fbf58b10b4d500c37592b35) Create mark-as-stable.md on 2022-06-16
+- Update Tauri to v1.0.0
+  - [42d98bb](https://www.github.com/your-org/tauri-plugin-graphql/commit/42d98bb34ea8d0c350659b669128ad632590131c) add tauri changefile on 2022-04-27
+  - [5f9cbdf](https://www.github.com/your-org/tauri-plugin-graphql/commit/5f9cbdf21e3f6d55c5ae41a19751b7d37fc56683) \[create-pull-request] automated change on 2022-04-27
+  - [01838a3](https://www.github.com/your-org/tauri-plugin-graphql/commit/01838a3cfb2eba7208e979dad89050902c36e2e7) Create update-tauri.md on 2022-05-25
+  - [fa12cf5](https://www.github.com/your-org/tauri-plugin-graphql/commit/fa12cf5756a9d7ccf282a465a0376b09b499cd01) \[create-pull-request] automated change on 2022-05-25
+  - [9a9bde4](https://www.github.com/your-org/tauri-plugin-graphql/commit/9a9bde4e8a5bc0b6d792fcf25c3530943ac27fb5) add changefile on 2022-06-16
+
 ## \[0.2.4]
 
 - Update Tauri to v1.0.0-rc.12

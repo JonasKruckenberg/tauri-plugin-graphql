@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-graphql"
-version = "0.2.4"
+version = "1.0.0"
 authors = [ "Jonas Kruckenberg" ]
 description = "A plugin for Tauri that enables type-safe IPC through GraphQL."
 edition = "2021"
