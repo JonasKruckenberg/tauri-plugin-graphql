@@ -24,10 +24,10 @@
   "dependencies": {
     "@tauri-apps/api": "1.0.0-rc.6",
     "@urql/core": "2.5.0",
-    "graphql": "16.5.0",
     "wonka": "4.0.15"
   },
   "devDependencies": {
+    "graphql": "16.5.0",
     "tsup": "6.1.0",
     "typescript": "4.7.3"
   }
