@@ -39,37 +39,39 @@ importers:
       '@tauri-apps/api': ^1.0.0-rc.3
       '@tauri-apps/cli': ^1.0.0-rc.8
       '@urql/preact': ^2.0.3
+      graphql: 16.5.0
       preact: ^10.7.1
       tauri-plugin-graphql-urql: link:../../packages/urql
       typescript: ^4.6.3
       vite: ^2.9.1
     dependencies:
       '@tauri-apps/api': 1.0.0-rc.3
-      '@urql/preact': 2.0.3_preact@10.7.1
+      '@urql/preact': 2.0.3_trdu6zecqswdibjflcpqu3lace
       preact: 10.7.1
       tauri-plugin-graphql-urql: link:../../packages/urql
     devDependencies:
       '@babel/core': 7.17.9
       '@preact/preset-vite': 2.2.0_lgopqmtflgxolititbsqugv5uy
       '@tauri-apps/cli': 1.0.0-rc.8
+      graphql: 16.5.0
       typescript: 4.6.3
       vite: 2.9.1
 
   packages/urql:
     specifiers:
-      '@tauri-apps/api': 1.0.0-rc.6
+      '@tauri-apps/api': 1.0.0
       '@urql/core': 2.5.0
       graphql: 16.5.0
-      tsup: 6.1.0
+      tsup: 6.1.2
       typescript: 4.7.3
       wonka: 4.0.15
     dependencies:
-      '@tauri-apps/api': 1.0.0-rc.6
+      '@tauri-apps/api': 1.0.0
       '@urql/core': 2.5.0_graphql@16.5.0
       wonka: 4.0.15
     devDependencies:
       graphql: 16.5.0
-      tsup: 6.1.0_typescript@4.7.3
+      tsup: 6.1.2_typescript@4.7.3
       typescript: 4.7.3
 
 packages:
@@ -480,12 +482,6 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-typed-document-node/core/3.1.1:
-    resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dev: false
-
   /@graphql-typed-document-node/core/3.1.1_graphql@16.5.0:
     resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
     peerDependencies:
@@ -630,18 +626,18 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /@tauri-apps/api/1.0.0:
+    resolution: {integrity: sha512-sPnq8/WQumCnyHERTeqKQiryRoM8X4ImMT7K+BJ3zT7bmp/n5162fZS/ZqYIFxKHgQqzwWqT7C96Sb0/CL7WsA==}
+    engines: {node: '>= 12.22.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+    dependencies:
+      type-fest: 2.13.1
+    dev: false
+
   /@tauri-apps/api/1.0.0-rc.3:
     resolution: {integrity: sha512-/ZbyBjuUoU6mYm8RzibIUvVuJ31ZwYA2+fTRl7FF4LVFhzCVJ1YI1BS5ohGb2GsLNmLpfeo7kDHaIhV2uaOchQ==}
     engines: {node: '>= 12.13.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dependencies:
       type-fest: 2.12.1
-    dev: false
-
-  /@tauri-apps/api/1.0.0-rc.6:
-    resolution: {integrity: sha512-/PbVs3/dUzid0/1XbML8tAkRSOmp+6Gv9ql02HGt3aIjNTvaL2902qEbiTX6xK++3oUoKJJ88t+V6IiNd1JUkw==}
-    engines: {node: '>= 12.13.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
-    dependencies:
-      type-fest: 2.12.2
     dev: false
 
   /@tauri-apps/cli-darwin-arm64/1.0.0-rc.8:
@@ -889,12 +885,13 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@urql/core/2.4.4:
+  /@urql/core/2.4.4_graphql@16.5.0:
     resolution: {integrity: sha512-TD+OS7jG1Ts6QkpU0TZ85i/vu40r71GF0QQFDhnWFtgkHcNwnpkIwWBMa72AR3j2imBTPpk61e/xb39uM/t37A==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.1
+      '@graphql-typed-document-node/core': 3.1.1_graphql@16.5.0
+      graphql: 16.5.0
       wonka: 4.0.15
     dev: false
 
@@ -908,13 +905,14 @@ packages:
       wonka: 4.0.15
     dev: false
 
-  /@urql/preact/2.0.3_preact@10.7.1:
+  /@urql/preact/2.0.3_trdu6zecqswdibjflcpqu3lace:
     resolution: {integrity: sha512-/dOKVau0dxRnPX7xwm0yhLwDkiPpNNRHDPVaq21NBAon7J+BhcP6+ckHzcQoyyl1BapGFQCqnxpW9ddceGLcpw==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
       preact: '>= 10.0.0'
     dependencies:
-      '@urql/core': 2.4.4
+      '@urql/core': 2.4.4_graphql@16.5.0
+      graphql: 16.5.0
       preact: 10.7.1
       wonka: 4.0.15
     dev: false
@@ -2111,7 +2109,7 @@ packages:
     dev: true
 
   /fs.realpath/1.0.0:
-    resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
+    resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
   /fsevents/2.3.2:
@@ -2357,7 +2355,7 @@ packages:
     dev: true
 
   /inflight/1.0.6:
-    resolution: {integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=}
+    resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -2879,7 +2877,7 @@ packages:
     dev: true
 
   /object-assign/4.1.1:
-    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -2912,7 +2910,7 @@ packages:
     dev: true
 
   /once/1.4.0:
-    resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
+    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
     dev: true
@@ -3008,7 +3006,7 @@ packages:
     dev: true
 
   /path-is-absolute/1.0.1:
-    resolution: {integrity: sha1-F0uSaHNVNP+8es5r9TpanhtcX18=}
+    resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -3550,8 +3548,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/6.1.0_typescript@4.7.3:
-    resolution: {integrity: sha512-kKSzFbX996OXkbQif23LV0xDDvxnhH95Hw39ku7Kx1NEfJxcxvqexGGEDgRyd5dlzIJI4U8mySfPeq5iExYwnw==}
+  /tsup/6.1.2_typescript@4.7.3:
+    resolution: {integrity: sha512-Hw4hKDHaAQkm2eVavlArEOrAPA93bziRDamdfwaNs0vXQdUUFfItvUWY0L/F6oQQMVh6GvjQq1+HpDXw8UKtPA==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
@@ -3623,8 +3621,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: false
 
-  /type-fest/2.12.2:
-    resolution: {integrity: sha512-qt6ylCGpLjZ7AaODxbpyBZSs9fCI9SkL3Z9q2oxMBQhs/uyY+VD8jHA8ULCGmWQJlBgqvO3EJeAngOHD8zQCrQ==}
+  /type-fest/2.13.1:
+    resolution: {integrity: sha512-hXYyrPFwETT2swFLHeoKtJrvSF/ftG/sA15/8nGaLuaDGfVAaq8DYFpu4yOyV4tzp082WqnTEoMsm3flKMI2FQ==}
     engines: {node: '>=12.20'}
     dev: false
 
@@ -3833,7 +3831,7 @@ packages:
     dev: true
 
   /wrappy/1.0.2:
-    resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
+    resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
   /y18n/4.0.3:
