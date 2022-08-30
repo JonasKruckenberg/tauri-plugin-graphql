@@ -15,7 +15,7 @@ keywords = [ "tauri-plugin", "graphql" ]
 features = [ "subscriptions" ]
 
 [dependencies]
-juniper = { version = "0.15.9", default-features = false }
+juniper = { version = "0.15.10", default-features = false }
 juniper_subscriptions = { version = "0.16.0", optional = true }
 serde = { version = "1.0.137", features = [ "derive" ], optional = true }
 serde_json = "1.0.81"
