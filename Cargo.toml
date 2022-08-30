@@ -28,3 +28,6 @@ subscriptions = [ "juniper_subscriptions", "serde" ]
 
 [dev-dependencies]
 rand = "0.8.5"
+
+[workspace]
+members = ["examples/*/src-tauri"]
