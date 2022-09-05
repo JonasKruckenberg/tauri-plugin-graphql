@@ -64,11 +64,11 @@ importers:
       graphql: 16.6.0
       tsup: 6.2.0
       typescript: 4.8.2
-      wonka: ^4.0.15
+      wonka: ^6.0.0
     dependencies:
       '@tauri-apps/api': 1.0.2
       '@urql/core': 3.0.2_graphql@16.6.0
-      wonka: 4.0.15
+      wonka: 6.0.0
     devDependencies:
       graphql: 16.6.0
       tsup: 6.2.0_typescript@4.8.2
@@ -3802,10 +3802,6 @@ packages:
     dependencies:
       string-width: 4.2.3
     dev: true
-
-  /wonka/4.0.15:
-    resolution: {integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==}
-    dev: false
 
   /wonka/6.0.0:
     resolution: {integrity: sha512-TEiIOqkhQXbcmL1RrjxPCzTX15V5FSyJvZRSiTxvgTgrJMaOVKmzGTdRVh349CfaNo9dsIhWDyg1/GNq4NWrEg==}
