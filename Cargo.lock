@@ -79,7 +79,6 @@ name = "app"
 version = "0.1.0"
 dependencies = [
  "async-graphql",
- "futures-util",
  "serde",
  "serde_json",
  "tauri",

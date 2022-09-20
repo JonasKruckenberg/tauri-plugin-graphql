@@ -4,10 +4,10 @@
 )]
 
 use async_graphql::{
+  futures_util::stream::Stream,
   EmptyMutation, EmptySubscription, Object, Result as GraphQLResult, Schema, SimpleObject,
   Subscription,
 };
-use futures_util::stream::Stream;
 
 #[derive(SimpleObject, Debug, Clone)]
 struct Human {
