@@ -3,24 +3,22 @@
   windows_subsystem = "windows"
 )]
 
-use juniper::{
-  graphql_object, graphql_subscription, EmptyMutation, FieldResult, GraphQLObject,
-  RootNode, FieldError,
-  futures::Stream
+use async_graphql::{
+  EmptyMutation, EmptySubscription, Object, Result as GraphQLResult, Schema, SimpleObject,
+  Subscription,
 };
-use tauri_plugin_graphql::Context as GraphQLContext;
-use std::pin::Pin;
+use futures_util::stream::Stream;
 
-#[derive(GraphQLObject, Debug, Clone)]
+#[derive(SimpleObject, Debug, Clone)]
 struct Human {
   name: String,
 }
 
 struct Query;
 
-#[graphql_object(context = GraphQLContext)]
+#[Object]
 impl Query {
-  fn hero() -> FieldResult<Human> {
+  async fn hero(&self) -> GraphQLResult<Human> {
     Ok(Human {
       name: "Luke Skywalker".to_string(),
     })
@@ -29,33 +27,15 @@ impl Query {
 
 pub struct Subscription;
 
-type StringStream = Pin<Box<dyn Stream<Item = Result<String, FieldError>> + Send>>;
-
-#[graphql_subscription(context = GraphQLContext)]
+#[Subscription]
 impl Subscription {
-    async fn hello_world() -> StringStream {
-        let stream = juniper::futures::stream::iter(vec![
-            Ok(String::from("Hello")),
-            Ok(String::from("World!"))
-        ]);
-
-        Box::pin(stream)
-    }
+  async fn hello_world(&self) -> impl Stream<Item = &str> {
+    futures_util::stream::iter(vec!["Hello", "World!"])
+  }
 }
 
-type Schema = RootNode<
-  'static,
-  Query,
-  EmptyMutation<GraphQLContext>,
-  Subscription,
->;
-
 fn main() {
-  let schema = Schema::new(
-    Query,
-    EmptyMutation::<GraphQLContext>::new(),
-    Subscription,
-  );
+  let schema = Schema::new(Query, EmptyMutation, Subscription);
 
   tauri::Builder::default()
     .plugin(tauri_plugin_graphql::init(schema))

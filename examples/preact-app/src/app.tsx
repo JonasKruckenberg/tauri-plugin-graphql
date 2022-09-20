@@ -9,7 +9,7 @@ query {
 `;
 
 function TestQuery() {
-  const [result, reexecuteQuery] = useQuery({
+  const [result] = useQuery({
     query: testQuery,
   });
 
@@ -29,8 +29,8 @@ const newMessages = `
   }
 `;
 
-function handleSubscription(messages = [], response) {
-  return [response.helloWorld, ...messages];
+function handleSubscription(messages = [], response) {  
+  return [...messages, response.helloWorld];
 };
 
 function TestSubscription() {
