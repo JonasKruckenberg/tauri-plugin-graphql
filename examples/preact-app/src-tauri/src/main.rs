@@ -4,8 +4,8 @@
 )]
 
 use async_graphql::{
-  futures_util::{self, stream::Stream}, EmptyMutation, Object, Result as GraphQLResult,
-  Schema, SimpleObject, Subscription,
+  futures_util::{self, stream::Stream},
+  EmptyMutation, Object, Result as GraphQLResult, Schema, SimpleObject, Subscription,
 };
 
 #[derive(SimpleObject, Debug, Clone)]

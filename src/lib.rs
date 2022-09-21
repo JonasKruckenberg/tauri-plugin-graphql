@@ -1,9 +1,9 @@
 // Copyright 2022 Jonas Kruckenberg
 // SPDX-License-Identifier: MIT
 
-//! This crate contains a Tauri plugin used to expose a [`async_graphql`] GraphQL
-//! endpoint through Tauri's IPC system. This plugin can be used as safer
-//! alternative to Tauri's existing Command API since both the Rust and
+//! This crate contains a Tauri plugin used to expose a [`async_graphql`]
+//! GraphQL endpoint through Tauri's IPC system. This plugin can be used as
+//! safer alternative to Tauri's existing Command API since both the Rust and
 //! JavaScript side of the interface can be generated from a common schema.
 //!
 //! ## Rationale
@@ -272,7 +272,7 @@ where
 {
   #[cfg(feature = "graphiql")]
   let schema2 = schema.clone();
-  
+
   let schema = Arc::new(schema);
 
   plugin::Builder::new("graphql")
