@@ -4,7 +4,7 @@
 )]
 
 use async_graphql::{
-  futures_util::stream::Stream, EmptyMutation, EmptySubscription, Object, Result as GraphQLResult,
+  futures_util::{self, stream::Stream}, EmptyMutation, Object, Result as GraphQLResult,
   Schema, SimpleObject, Subscription,
 };
 
