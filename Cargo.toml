@@ -11,20 +11,40 @@ repository = "https://github.com/JonasKruckenberg/tauri-plugin-graphql"
 categories = [ "gui", "web-programming" ]
 keywords = [ "tauri-plugin", "graphql" ]
 
-[package.metadata.docs.rs]
-features = [ "subscriptions" ]
+# [package.metadata.docs.rs]
+# features = [ "subscriptions" ]
 
 [dependencies]
-juniper = { version = "0.15.10", default-features = false }
-juniper_subscriptions = { version = "0.16.0", optional = true }
-serde = { version = "1.0.137", features = [ "derive" ], optional = true }
+serde = { version = "1.0.137", features = ["derive"] }
 serde_json = "1.0.81"
 tauri = "^1.0.0-rc.3"
+async-graphql = "4.0"
+warp = { version = "0.3.2", optional = true }
+async-graphql-warp = { version = "4.0.13", optional = true}
+http = { version = "0.2.8", optional = true }
 
 [features]
-url = [ "juniper/url" ]
-uuid = [ "juniper/uuid" ]
-subscriptions = [ "juniper_subscriptions", "serde" ]
+graphiql = [ "dep:http", "dep:warp", "dep:async-graphql-warp"]
+log = ["async-graphql/log"]
+tracing = ["async-graphql/tracing"]
+opentelemetry = ["async-graphql/opentelemetry"]
+bson = ["async-graphql/bson"]
+chrono = ["async-graphql/chrono"]
+chrono-tz = ["async-graphql/chrono-tz"]
+url = ["async-graphql/url"]
+uuid = ["async-graphql/uuid"]
+uuid08 = ["async-graphql/uuid08"]
+string_number = ["async-graphql/string_number"]
+dataloader = ["async-graphql/dataloader"]
+secrecy = ["async-graphql/secrecy"]
+decimal = ["async-graphql/decimal"]
+bigdecimal = ["async-graphql/bigdecimal"]
+cbor = ["async-graphql/cbor"]
+smol_str = ["async-graphql/smol_str"]
+hashbrown = ["async-graphql/hashbrown"]
+time = ["async-graphql/time"]
+tokio-sync = ["async-graphql/tokio-sync"]
+fast_chemail = ["async-graphql/fast_chemail"]
 
 [dev-dependencies]
 rand = "0.8.5"
