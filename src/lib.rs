@@ -1,7 +1,7 @@
 // Copyright 2022 Jonas Kruckenberg
 // SPDX-License-Identifier: MIT
 
-//! This crate contains a Tauri plugin used to expose a [`juniper`] GraphQL
+//! This crate contains a Tauri plugin used to expose a [`async_graphql`] GraphQL
 //! endpoint through Tauri's IPC system. This plugin can be used as safer
 //! alternative to Tauri's existing Command API since both the Rust and
 //! JavaScript side of the interface can be generated from a common schema.
@@ -210,12 +210,11 @@
 //! [`Events`]: https://tauri.studio/docs/guides/events
 //! [`GraphQL`]: https://graphql.org
 
-use std::sync::Arc;
-
 use async_graphql::{
   futures_util::StreamExt, BatchRequest, ObjectType, Request, Schema, SubscriptionType,
 };
 use serde::Deserialize;
+use std::sync::Arc;
 use tauri::{
   plugin::{self, TauriPlugin},
   InvokeError, Manager, Runtime,
@@ -223,11 +222,11 @@ use tauri::{
 
 /// Initializes the GraphQL plugin
 ///
-/// This plugin exposes a juniper GraphQL endpoint via Tauri's IPC system,
+/// This plugin exposes a async-graphql endpoint via Tauri's IPC system,
 /// allowing the frontend to invoke backend functionality through GraphQL.
 /// **This does not open a web server.**
 ///
-/// The `schema` argument must be a valid [`juniper::RootNode`].
+/// The `schema` argument must be a valid [`async_graphql::Schema`].
 ///
 /// ## Example
 ///
@@ -271,9 +270,63 @@ where
   Mutation: ObjectType + 'static,
   Subscription: SubscriptionType + 'static,
 {
+  #[cfg(feature = "graphiql")]
+  let schema2 = schema.clone();
+  
   let schema = Arc::new(schema);
 
   plugin::Builder::new("graphql")
+    .setup(move |_| {
+      #[cfg(feature = "graphiql")]
+      {
+        use async_graphql::http::GraphiQLSource;
+        use async_graphql_warp::{GraphQLBadRequest, GraphQLResponse};
+        use http::StatusCode;
+        use std::convert::Infallible;
+        use warp::{http::Response as HttpResponse, Filter, Rejection};
+
+        let graphql_post = async_graphql_warp::graphql(schema2).and_then(
+          |(schema, request): (
+            Schema<Query, Mutation, Subscription>,
+            async_graphql::Request,
+          )| async move {
+            Ok::<_, Infallible>(GraphQLResponse::from(schema.execute(request).await))
+          },
+        );
+
+        let graphiql = warp::path::end().and(warp::get()).map(|| {
+          HttpResponse::builder()
+            .header("content-type", "text/html")
+            .body(
+              GraphiQLSource::build()
+                .endpoint("http://localhost:8000")
+                .finish(),
+            )
+        });
+
+        let routes = graphiql
+          .or(graphql_post)
+          .recover(|err: Rejection| async move {
+            if let Some(GraphQLBadRequest(err)) = err.find() {
+              return Ok::<_, Infallible>(warp::reply::with_status(
+                err.to_string(),
+                StatusCode::BAD_REQUEST,
+              ));
+            }
+
+            Ok(warp::reply::with_status(
+              "INTERNAL_SERVER_ERROR".to_string(),
+              StatusCode::INTERNAL_SERVER_ERROR,
+            ))
+          });
+
+        println!("GraphiQL IDE: http://localhost:8000");
+
+        tauri::async_runtime::spawn(warp::serve(routes).run(([0, 0, 0, 0], 8000)));
+      }
+
+      Ok(())
+    })
     .invoke_handler(move |invoke| {
       let window = invoke.message.window();
 
@@ -320,7 +373,7 @@ where
 }
 
 #[derive(Debug, Deserialize)]
-pub struct SubscriptionRequest {
+struct SubscriptionRequest {
   #[serde(flatten)]
   inner: Request,
   id: u32,
