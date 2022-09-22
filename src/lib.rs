@@ -210,6 +210,7 @@
 //! [`Events`]: https://tauri.studio/docs/guides/events
 //! [`GraphQL`]: https://graphql.org
 
+pub use async_graphql;
 use async_graphql::{
   futures_util::StreamExt, BatchRequest, ObjectType, Request, Schema, SubscriptionType,
 };
@@ -218,7 +219,6 @@ use tauri::{
   plugin::{self, TauriPlugin},
   InvokeError, Manager, Runtime,
 };
-pub use async_graphql;
 
 /// Initializes the GraphQL plugin
 ///
