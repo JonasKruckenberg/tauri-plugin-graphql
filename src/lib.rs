@@ -214,7 +214,6 @@ use async_graphql::{
   futures_util::StreamExt, BatchRequest, ObjectType, Request, Schema, SubscriptionType,
 };
 use serde::Deserialize;
-use std::sync::Arc;
 use tauri::{
   plugin::{self, TauriPlugin},
   InvokeError, Manager, Runtime,
@@ -273,8 +272,6 @@ where
 {
   #[cfg(feature = "graphiql")]
   let schema2 = schema.clone();
-
-  let schema = Arc::new(schema);
 
   plugin::Builder::new("graphql")
     .setup(move |_| {
