@@ -15,13 +15,13 @@ keywords = [ "tauri-plugin", "graphql" ]
 features = [ "graphiql" ]
 
 [dependencies]
-serde = { version = "^1.0.0", features = [ "derive" ] }
-serde_json = "^1.0.0"
+serde = { version = "^1.0.137", features = [ "derive" ] }
+serde_json = "^1.0.81"
 tauri = "^1.0.0"
 async-graphql = "^4.0.0"
-warp = { version = "10.3.2", optional = true }
-async-graphql-warp = { version = "4.0.13", optional = true }
-http = { version = "0.2.8", optional = true }
+warp = { version = "^0.3.2", optional = true }
+async-graphql-warp = { version = "^4.0.13", optional = true }
+http = { version = "^0.2.8", optional = true }
 
 [features]
 graphiql = [ "dep:http", "dep:warp", "dep:async-graphql-warp" ]
