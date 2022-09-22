@@ -37,7 +37,6 @@ You need to register the plugin giving it a [`async_graphql::Schema`]. This sche
 
 ```rust
 use async_graphql::{Schema, Object, EmptySubscription, EmptyMutation, Result as GraphQLResult, SimpleObject};
-use tauri_plugin_graphql::Context as GraphQLContext;
 
 #[derive(SimpleObject, Debug, Clone)]
 struct ListItem {
@@ -58,7 +57,7 @@ struct Query;
 
 #[Object]
 impl Query {
-    fn list() -> GraphQLResult<Vec<ListItem>> {
+    async fn list(&self) -> GraphQLResult<Vec<ListItem>> {
         let item = vec![
             ListItem::new("foo".to_string()),
             ListItem::new("bar".to_string())

@@ -155,9 +155,6 @@
 //!
 //! ### Subscriptions
 //!
-//! > **Support for GraphQL Subscriptions requires the `subscriptions` feature
-//! flag**
-//!
 //! GraphQL subscriptions are a way to push real-time data to the Frontend.
 //! Similarly to queries, a client can request a set of fields, but instead of
 //! immediately returning a single answer, a new result is sent to the Frontend
@@ -166,13 +163,17 @@
 //! Subscription resolvers should be async and must return a [`Stream`].
 //!
 //! ```rust
-//! use async_graphql::{futures_util::{self, stream::Stream}, Schema, Object, Subscription, EmptySubscription, EmptyMutation, SimpleObject, Result as GraphQLObject};
+//! use async_graphql::{
+//!   futures_util::{self, stream::Stream}, 
+//!   Schema, Object, Subscription, EmptySubscription, 
+//!   EmptyMutation, SimpleObject, Result as GraphQLResult
+//! };
 //!
 //! struct Query;
 //!
 //! #[Object]
 //! impl Query {
-//!   async fn hello_world(&self) -> GraphQLObject<&str> {
+//!   async fn hello_world(&self) -> GraphQLResult<&str> {
 //!     Ok("Hello World!")
 //!   }
 //! }
@@ -205,7 +206,7 @@
 //! change between releases **this plugin has no backwards compatibility
 //! guarantees**.
 //!
-//! [`Stream`]: https://docs.rs/futures/latest/futures/stream/trait.Stream.html
+//! [`Stream`]: https://docs.rs/futures-util/latest/futures_util/stream/trait.Stream.html
 //! [`Commands`]: https://tauri.studio/docs/guides/command
 //! [`Events`]: https://tauri.studio/docs/guides/events
 //! [`GraphQL`]: https://graphql.org
