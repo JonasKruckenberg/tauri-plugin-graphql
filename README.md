@@ -33,13 +33,13 @@ If you need adapters for other GraphQL clients, open a PR!
 
 ## Usage
 
-You need to register the plugin giving it a [`juniper::RootNode`] schema. This schema will be used to fulfill requests.
+You need to register the plugin giving it a [`async_graphql::Schema`]. This schema will be used to fulfill requests.
 
 ```rust
-use juniper::{graphql_object, EmptySubscription, EmptyMutation, FieldResult, GraphQLObject, RootNode};
+use async_graphql::{Schema, Object, EmptySubscription, EmptyMutation, Result as GraphQLResult, SimpleObject};
 use tauri_plugin_graphql::Context as GraphQLContext;
 
-#[derive(GraphQLObject, Debug, Clone)]
+#[derive(SimpleObject, Debug, Clone)]
 struct ListItem {
     id: i32,
     text: String
@@ -56,9 +56,9 @@ impl ListItem {
 
 struct Query;
 
-#[graphql_object(context = GraphQLContext)]
+#[Object]
 impl Query {
-    fn list() -> FieldResult<Vec<ListItem>> {
+    fn list() -> GraphQLResult<Vec<ListItem>> {
         let item = vec![
             ListItem::new("foo".to_string()),
             ListItem::new("bar".to_string())
@@ -68,14 +68,11 @@ impl Query {
     }
 }
 
-// Consumers of this schema can only read data, so we must specifcy `EmptyMutation` and `EmptySubscription`
-type Schema = RootNode<'static, Query, EmptyMutation<GraphQLContext>, EmptySubscription<GraphQLContext>>;
-
 fn main() {
     let schema = Schema::new(
         Query,
-        EmptyMutation::<GraphQLContext>::new(),
-        EmptySubscription::<GraphQLContext>::new(),
+        EmptyMutation,
+        EmptySubscription,
     );
 
     tauri::Builder::default()
@@ -101,4 +98,4 @@ PRs are welcome!
 [urql-adapter-version-badge]: https://img.shields.io/npm/v/tauri-plugin-graphql-urql?label=%20
 [urql-adapter-changelog]: packages/urql/CHANGELOG.md
 [`urql`]: https://formidable.com/open-source/urql/
-[`juniper::rootnode`]: https://docs.rs/juniper/latest/juniper/struct.RootNode.html
+[`async_graphql::Schema`]: https://docs.rs/async-graphql/latest/async_graphql/struct.Schema.html
