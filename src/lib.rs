@@ -219,6 +219,7 @@ use tauri::{
   plugin::{self, TauriPlugin},
   InvokeError, Manager, Runtime,
 };
+pub use async_graphql;
 
 /// Initializes the GraphQL plugin
 ///
