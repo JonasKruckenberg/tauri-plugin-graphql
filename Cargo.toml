@@ -11,8 +11,8 @@ repository = "https://github.com/JonasKruckenberg/tauri-plugin-graphql"
 categories = [ "gui", "web-programming" ]
 keywords = [ "tauri-plugin", "graphql" ]
 
-# [package.metadata.docs.rs]
-# features = [ "subscriptions" ]
+[package.metadata.docs.rs]
+features = [ "graphiql" ]
 
 [dependencies]
 serde = { version = "1.0.137", features = ["derive"] }
