@@ -1,5 +1,11 @@
 # Changelog
 
+## \[2.0.2]
+
+- Drop tauri >1.0.0
+  - Bumped due to a bump in tauri-plugin-graphql.
+  - [1d5a578](https://www.github.com/your-org/tauri-plugin-graphql/commit/1d5a578cb4595ee04b9705d448a5fd44f6c61659) Create adjust-dependency-version.md on 2022-09-22
+
 ## \[2.0.1]
 
 - Added optional support for the GraphiQL IDE, to explore the Schema during Development. This is gated behind the `graphiql` feature flag.
