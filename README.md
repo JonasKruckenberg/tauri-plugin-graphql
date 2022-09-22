@@ -19,7 +19,7 @@ A plugin for Tauri that enables type-safe IPC through GraphQL.
 
 ```toml
 [dependencies]
-tauri-plugin-graphql = "1.0.0"
+tauri-plugin-graphql = "2.0.0"
 ```
 
 ### JavaScript

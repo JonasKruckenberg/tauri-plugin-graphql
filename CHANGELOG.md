@@ -1,5 +1,16 @@
 # Changelog
 
+## \[2.0.0]
+
+- Added optional support for the GraphiQL IDE, to explore the Schema during Development. This is gated behind the `graphiql` feature flag.
+  - [209e0b4](https://www.github.com/your-org/tauri-plugin-graphql/commit/209e0b416ad6d845f7121e8bf8c270ced4d81be9) update changesets on 2022-09-21
+- Re-export `async_graphql` from crate.
+  - [d587a33](https://www.github.com/your-org/tauri-plugin-graphql/commit/d587a33674a33a98edffec1b211dcf668905e7b5) feat: re-export async_graphql on 2022-09-22
+- Switch from [`juniper`](https://github.com/async-graphql/async-graphql) to [`async-graphql`](https://github.com/graphql-rust/juniper). This adds integration with more crates, including the `log`, `tracing` and `opentelemetry` ecosystems. It also improves performance and simplifies the implementation.
+  - [f7ec823](https://www.github.com/your-org/tauri-plugin-graphql/commit/f7ec823ac12cbded1fcc2d27ae0aae7251fe4269) add changeset on 2022-09-20
+  - [78649ef](https://www.github.com/your-org/tauri-plugin-graphql/commit/78649ef6e58298876ebcfc5e48977adf31a2f688) Update switch-to-async-graphql.md on 2022-09-20
+  - [209e0b4](https://www.github.com/your-org/tauri-plugin-graphql/commit/209e0b416ad6d845f7121e8bf8c270ced4d81be9) update changesets on 2022-09-21
+
 ## \[1.0.0]
 
 - Mark as `stable`
