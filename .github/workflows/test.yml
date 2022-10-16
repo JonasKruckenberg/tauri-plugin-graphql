@@ -34,7 +34,7 @@ jobs:
       with:
         toolchain: stable
         override: true
-    - uses: Swatinem/rust-cache@v1
+    - uses: Swatinem/rust-cache@v2
     - name: Install gtk on Ubuntu
       if: matrix.os == 'ubuntu-latest'
       run: |
