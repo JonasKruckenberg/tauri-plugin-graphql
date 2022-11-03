@@ -62,7 +62,7 @@ importers:
       '@tauri-apps/api': ^1.0.0
       '@urql/core': ^3.0.0
       graphql: 16.6.0
-      tsup: 6.3.0
+      tsup: 6.4.0
       typescript: 4.8.4
       wonka: ^6.0.0
     dependencies:
@@ -71,7 +71,7 @@ importers:
       wonka: 6.0.0
     devDependencies:
       graphql: 16.6.0
-      tsup: 6.3.0_typescript@4.8.4
+      tsup: 6.4.0_typescript@4.8.4
       typescript: 4.8.4
 
 packages:
@@ -1142,8 +1142,8 @@ packages:
       semver: 7.3.7
     dev: true
 
-  /bundle-require/3.1.0_esbuild@0.15.7:
-    resolution: {integrity: sha512-IIXtAO7fKcwPHNPt9kY/WNVJqy7NDy6YqJvv6ENH0TOZoJ+yjpEsn1w40WKZbR2ibfu5g1rfgJTvmFHpm5aOMA==}
+  /bundle-require/3.1.2_esbuild@0.15.7:
+    resolution: {integrity: sha512-Of6l6JBAxiyQ5axFxUM6dYeP/W7X2Sozeo/4EYB9sJhL+dqL7TKjg+shwxp6jlu/6ZSERfsYtIpSJ1/x3XkAEA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       esbuild: '>=0.13'
@@ -3442,9 +3442,9 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /rollup/2.78.1:
-    resolution: {integrity: sha512-VeeCgtGi4P+o9hIg+xz4qQpRl6R401LWEXBmxYKOV4zlF82lyhgh2hTZnheFUbANE8l2A41F458iwj2vEYaXJg==}
-    engines: {node: '>=10.0.0'}
+  /rollup/3.2.5:
+    resolution: {integrity: sha512-/Ha7HhVVofduy+RKWOQJrxe4Qb3xyZo+chcpYiD8SoQa4AG7llhupUtyfKSSrdBM2mWJjhM8wZwmbY23NmlIYw==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
@@ -3774,8 +3774,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/6.3.0_typescript@4.8.4:
-    resolution: {integrity: sha512-IaNQO/o1rFgadLhNonVKNCT2cks+vvnWX3DnL8sB87lBDqRvJXHENr5lSPJlqwplUlDxSwZK8dSg87rgBu6Emw==}
+  /tsup/6.4.0_typescript@4.8.4:
+    resolution: {integrity: sha512-4OlbqIK/SF+cJp0mMqPM2pKULvgj/1S2Gm3I1aFoFGIryUOyIqPZBoqKkqVQT6uFtWJ5AHftIv0riXKfHox1zQ==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
@@ -3790,7 +3790,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      bundle-require: 3.1.0_esbuild@0.15.7
+      bundle-require: 3.1.2_esbuild@0.15.7
       cac: 6.7.14
       chokidar: 3.5.3
       debug: 4.3.4
@@ -3800,7 +3800,7 @@ packages:
       joycon: 3.1.1
       postcss-load-config: 3.1.4
       resolve-from: 5.0.0
-      rollup: 2.78.1
+      rollup: 3.2.5
       source-map: 0.8.0-beta.0
       sucrase: 3.25.0
       tree-kill: 1.2.2
