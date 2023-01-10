@@ -1,5 +1,10 @@
 # Changelog
 
+## \[2.1.0]
+
+- Bump `async-graphql` to v5.
+  - [9551574](https://www.github.com/your-org/tauri-plugin-graphql/commit/95515743ca143d68743ae9817865fe31dffd7fd9) Create update-async-graphql.md on 2023-01-10
+
 ## \[2.0.1]
 
 - Drop tauri >1.0.0
