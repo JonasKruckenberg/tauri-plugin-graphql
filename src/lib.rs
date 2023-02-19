@@ -222,6 +222,13 @@ use tauri::{
   plugin::{self, TauriPlugin},
   Invoke, InvokeError, Manager, Runtime,
 };
+use stream_cancel::{Trigger, Tripwire, StreamExt as CancelStreamExt};
+use dashmap::DashMap;
+use lazy_static::lazy_static;
+
+lazy_static! {
+static ref SUBSCRIPTIONS:DashMap<u32, Trigger> = DashMap::new();
+}
 
 fn invoke_handler<R, Query, Mutation, Subscription>(
   schema: Schema<Query, Mutation, Subscription>,
@@ -254,11 +261,12 @@ where
         let req: SubscriptionRequest = serde_json::from_value(invoke.message.payload().clone())
           .map_err(InvokeError::from_serde_json)?;
 
+        let (trigger, tripwire) = Tripwire::new();
         let subscription_window = window.clone();
-        let mut stream = schema.execute_stream(req.inner.data(window.app_handle()).data(window));
+        let mut stream = schema.execute_stream(req.inner.data(window.app_handle()).data(window)).take_until_if(tripwire);
 
         let event_id = &format!("graphql://{}", req.id);
-
+        SUBSCRIPTIONS.insert(req.id, trigger);
         while let Some(result) = stream.next().await {
           let str = serde_json::to_string(&result).map_err(InvokeError::from_serde_json)?;
 
@@ -266,6 +274,12 @@ where
         }
         subscription_window.emit(event_id, Option::<()>::None)?;
 
+        Ok(())
+      }),
+      "subscriptions_end" => invoke.resolver.respond_async(async move {
+        let req: SubscriptionRequest = serde_json::from_value(invoke.message.payload().clone())
+            .map_err(InvokeError::from_serde_json)?;
+        SUBSCRIPTIONS.remove(&req.id);
         Ok(())
       }),
       cmd => invoke.resolver.reject(format!(
