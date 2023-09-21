@@ -39,21 +39,21 @@ importers:
       '@tauri-apps/api': 1.0.2
       '@tauri-apps/cli': 1.0.5
       '@urql/preact': 3.0.1
-      graphql: 16.6.0
+      graphql: 16.8.1
       preact: 10.10.6
       tauri-plugin-graphql-urql: link:../../packages/urql
       typescript: 4.8.2
       vite: 3.0.9
     dependencies:
       '@tauri-apps/api': 1.0.2
-      '@urql/preact': 3.0.1_jqsnhmpcy2sfij33eop4nmnugi
+      '@urql/preact': 3.0.1_y6awg65cxgyyu7ivjpbxhpucru
       preact: 10.10.6
       tauri-plugin-graphql-urql: link:../../packages/urql
     devDependencies:
       '@babel/core': 7.18.13
       '@preact/preset-vite': 2.3.0_wibdudaz52xr4lhcmpvnys3x3u
       '@tauri-apps/cli': 1.0.5
-      graphql: 16.6.0
+      graphql: 16.8.1
       typescript: 4.8.2
       vite: 3.0.9
 
@@ -61,16 +61,16 @@ importers:
     specifiers:
       '@tauri-apps/api': ^1.0.0
       '@urql/core': ^3.0.0
-      graphql: 16.6.0
+      graphql: 16.8.1
       tsup: 6.5.0
       typescript: 4.9.4
       wonka: ^6.0.0
     dependencies:
       '@tauri-apps/api': 1.0.2
-      '@urql/core': 3.0.2_graphql@16.6.0
+      '@urql/core': 3.0.2_graphql@16.8.1
       wonka: 6.0.0
     devDependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
       tsup: 6.5.0_typescript@4.9.4
       typescript: 4.9.4
 
@@ -505,12 +505,12 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-typed-document-node/core/3.1.1_graphql@16.6.0:
+  /@graphql-typed-document-node/core/3.1.1_graphql@16.8.1:
     resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      graphql: 16.6.0
+      graphql: 16.8.1
     dev: false
 
   /@humanwhocodes/config-array/0.10.4:
@@ -931,24 +931,24 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@urql/core/3.0.2_graphql@16.6.0:
+  /@urql/core/3.0.2_graphql@16.8.1:
     resolution: {integrity: sha512-TRpQOdt1Mtpt/EgPlFCx9Aqc3TbHtzH3yj8pJ9yjSUKT4slRyy+ofMQ8yx50oZzZjAOswF02zBRwnxsZANb35A==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
-      graphql: 16.6.0
+      '@graphql-typed-document-node/core': 3.1.1_graphql@16.8.1
+      graphql: 16.8.1
       wonka: 6.0.0
     dev: false
 
-  /@urql/preact/3.0.1_jqsnhmpcy2sfij33eop4nmnugi:
+  /@urql/preact/3.0.1_y6awg65cxgyyu7ivjpbxhpucru:
     resolution: {integrity: sha512-d1Bhj7tkOQPGVmi6Ayng8DXUAKXJTQChE+ks2WUfipmEIBswaV6AGjrAcVTy/ZkwndJLf4uyXLCyjujNbL8cNw==}
     peerDependencies:
       graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
       preact: '>= 10.0.0'
     dependencies:
-      '@urql/core': 3.0.2_graphql@16.6.0
-      graphql: 16.6.0
+      '@urql/core': 3.0.2_graphql@16.8.1
+      graphql: 16.8.1
       preact: 10.10.6
       wonka: 6.0.0
     dev: false
@@ -2511,8 +2511,8 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
-  /graphql/16.6.0:
-    resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
+  /graphql/16.8.1:
+    resolution: {integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   /handlebars/4.7.7:
