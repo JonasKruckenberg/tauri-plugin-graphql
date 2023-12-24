@@ -178,9 +178,12 @@ export function subscribe(
   operation: SubscriptionOperation,
   sink: ObserverLike<ExecutionResult>
 ) {
-  let unlisten: () => void = () => {}
-
   const id = Math.floor(Math.random() * 10000000)
+
+  let unlisten: () => void = () => {
+    Promise.resolve().then(() => invoke('plugin:graphql|subscriptions_end', {...operation, id}))
+       .catch(err => console.error(err))
+  }
 
   Promise.resolve()
     .then(async () =>
