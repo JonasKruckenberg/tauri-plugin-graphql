@@ -14,7 +14,7 @@
     "@effection/fetch": "^2.0.4",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
-    "covector": "^0.7.3",
+    "covector": "^0.11.0",
     "effection": "^2.0.4",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.5.0",
