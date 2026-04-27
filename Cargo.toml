@@ -47,7 +47,7 @@ tokio-sync = [ "async-graphql/tokio-sync" ]
 fast_chemail = [ "async-graphql/fast_chemail" ]
 
 [dev-dependencies]
-rand = "0.8.5"
+rand = "0.10.0"
 
 [workspace]
 members = [ "examples/*/src-tauri" ]
