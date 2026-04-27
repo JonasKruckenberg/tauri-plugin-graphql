@@ -420,7 +420,7 @@ dependencies = [
  "hex",
  "indexmap 1.8.1",
  "lazy_static",
- "rand 0.8.5",
+ "rand 0.8.6",
  "serde",
  "serde_bytes",
  "serde_json",
@@ -2028,7 +2028,7 @@ dependencies = [
  "mime",
  "mime_guess",
  "quick-error",
- "rand 0.8.5",
+ "rand 0.8.6",
  "safemem",
  "tempfile",
  "twoway",
@@ -2228,7 +2228,7 @@ dependencies = [
  "once_cell",
  "opentelemetry_api",
  "percent-encoding",
- "rand 0.8.5",
+ "rand 0.8.6",
  "thiserror",
 ]
 
@@ -2417,7 +2417,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5d5285893bb5eb82e6aaf5d59ee909a06a16737a8970984dd7746ba9283498d6"
 dependencies = [
  "phf_shared 0.10.0",
- "rand 0.8.5",
+ "rand 0.8.6",
 ]
 
 [[package]]
@@ -2427,7 +2427,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1181c94580fa345f50f19d738aaa39c0ed30a600d95cb2d3e23f94266f14fbf"
 dependencies = [
  "phf_shared 0.11.1",
- "rand 0.8.5",
+ "rand 0.8.6",
 ]
 
 [[package]]
@@ -2641,9 +2641,9 @@ dependencies = [
 
 [[package]]
 name = "rand"
-version = "0.8.5"
+version = "0.8.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404"
+checksum = "5ca0ecfa931c29007047d1bc58e623ab12e5590e8c7cc53200d5202b69266d8a"
 dependencies = [
  "libc",
  "rand_chacha 0.3.1",
@@ -3352,7 +3352,7 @@ dependencies = [
  "objc",
  "once_cell",
  "percent-encoding",
- "rand 0.8.5",
+ "rand 0.8.6",
  "raw-window-handle",
  "semver 1.0.7",
  "serde",
@@ -3437,7 +3437,7 @@ dependencies = [
  "async-graphql 5.0.10",
  "async-graphql-warp",
  "http",
- "rand 0.8.5",
+ "rand 0.8.6",
  "serde",
  "serde_json",
  "tauri",
@@ -3453,7 +3453,7 @@ dependencies = [
  "gtk",
  "http",
  "http-range",
- "rand 0.8.5",
+ "rand 0.8.6",
  "raw-window-handle",
  "serde",
  "serde_json",
@@ -3474,7 +3474,7 @@ dependencies = [
  "cocoa",
  "gtk",
  "percent-encoding",
- "rand 0.8.5",
+ "rand 0.8.6",
  "raw-window-handle",
  "tauri-runtime",
  "tauri-utils",
@@ -3781,7 +3781,7 @@ dependencies = [
  "http",
  "httparse",
  "log",
- "rand 0.8.5",
+ "rand 0.8.6",
  "sha-1",
  "thiserror",
  "url",
